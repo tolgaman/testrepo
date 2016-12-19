@@ -1,2 +1,32 @@
 #!/usr/bin/python
 print "test 123"
+a, b, c, d, e  = "12", 2, 5, "abcdefghijk", "EREEEEEEEE"
+#del a     TO delete the object
+
+
+a = 121212
+print(a)  
+print(d)
+
+print (d +  "sdfsdsdsdsd" + e)
+print ("first character " + d[0] )
+print (d[0:])
+print (d[2:])
+
+complex_number = 4j
+print (complex_number*complex_number)
+
+
+
+dict = {}
+dict['one'] = "This is one"
+dict[2]     = "This is two"
+
+tinydict = {'name': 'john','code':6734, 'dept': 'sales'}
+
+
+print (dict['one'])       # Prints value for 'one' key
+print (dict[2])           # Prints value for 2 key
+print (tinydict)          # Prints complete dictionary
+print (tinydict.keys())   # Prints all the keys
+print (tinydict.values()) # Prints all the values
