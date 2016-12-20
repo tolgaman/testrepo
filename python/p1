@@ -1,4 +1,7 @@
 #!/usr/bin/python
+
+import sys
+
 print "test 123"
 a, b, c, d, e  = "12", 2, 5, "abcdefghijk", "EREEEEEEEE"
 #del a     TO delete the object
@@ -30,3 +33,82 @@ print (dict[2])           # Prints value for 2 key
 print (tinydict)          # Prints complete dictionary
 print (tinydict.keys())   # Prints all the keys
 print (tinydict.values()) # Prints all the values
+
+tinydictlist1 = list(tinydict)
+
+
+print (tinydictlist1)
+
+print "tinydictlist1 again "
+
+tinydictlist1[0]="lalala"
+
+print "tinydictlist1 again 2 "
+print (tinydictlist1)
+
+print "tuples"
+tinydictlist1tupe = tuple(tinydictlist1)
+print tinydictlist1tupe
+
+####tinydictlist1tupe[0]="alalal"    => tuple cant be changed
+
+letters = ["a", "b", "c", "d", "a"]
+letter1 = "a"
+if letter1 in letters:
+ print "YES"
+else:
+ print "NO"
+
+if letters[0] is letters[4]:
+ print "Sifirinci dorduncuye esit"
+else:
+ print "Sifirinci dorduncuye esit degil"
+
+for i in range(7,100,4):
+ print i
+
+list=[1,2,3,4]
+it = iter(list) # this builds an iterarot object
+print next(it), "next "  #prints the available element in iterator
+print (next(it), "next" ) 
+ 
+
+
+for x in it:
+   print (x, " ")
+
+# while True:
+#   try:
+#      print (next(it))
+#   except StopIteration:
+#      sys.exit() #you have to import sys module for this
+
+#Generator function here
+
+
+# def fibonacci(n): #generator function
+#    a, b, counter = 0, 1, 0
+#    while True:
+#        if (counter > n): 
+#            return
+#        yield a
+#        a, b = b, a + b
+#        counter += 1
+#f = fibonacci(7) #f is iterator object
+# while True:
+#   try:
+#      print (next(f), " ")
+#   except StopIteration:
+#      sys.exit()
+
+
+
+list2=[1, 2, 3, 4, 5, 6, 7, 8]
+#for i in list2:
+# print i*2
+
+list2it1 = iter(list2)
+print next(list2it1)
+print next(list2it1)
+
+
