@@ -1,6 +1,9 @@
 #!/usr/bin/python
-
+#
 import sys
+import random
+import math 
+
 
 print "test 123"
 a, b, c, d, e  = "12", 2, 5, "abcdefghijk", "EREEEEEEEE"
@@ -111,4 +114,23 @@ list2it1 = iter(list2)
 print next(list2it1)
 print next(list2it1)
 
+var1, var2, var3 = "a1" ," b2", "c3"
+del var1, var2
+var1=2
+print var1, var3
+
+
+
+print  random.choice([1, 2, 4, 5, 6])
+
+listr3=[1, 2, 3, 4, 5, 6, 7, 8]
+
+print listr3
+print listr3[4] 
+random.seed(1000)
+random.shuffle(listr3) 
+random.shuffle(listr3)
+print listr3
+
+print math.cos(0)
 
