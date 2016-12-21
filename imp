@@ -1,0 +1,8 @@
+git clone https://github.com/tolgaman/testrepo.git
+git add abc
+git commit -m "ssdsds"
+git push
+
+git config credential.helper store
+   
+git push  https://github.com/tolgaman/testrepo.git
