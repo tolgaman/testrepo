@@ -140,3 +140,29 @@ print math.cos(0)
 
 print math.sin(90)
 
+haydarv="Haydar Hiyar midir? "
+print haydarv
+print haydarv[7:12]
+print haydarv[1:13:2]
+haydarv2="Elbette hiyardir"
+print haydarv + " Bakalim Cevap nedir: "   +   haydarv2
+
+print "ya %s  yogurt    %s "  % ( haydarv , haydarv2 )
+
+
+str1="bu bir testtir"
+print str1.capitalize()
+print str1.center(40, '*')
+sub1="t"
+print str1.count(sub1)
+print str1.count(sub1, 5, 8) 
+print str1[0:8]
+print str1[0:8:2]
+print str1.endswith("i")
+print str1.find("te")
+print "min " +  min(str1)
+print "max: " + max(str1)
+print "rstrip: " +  str1.rstrip()
+str2 = "Line1-abcdef \nLine2-abc \nLine4-abcd";
+print str2.split('Lin',3 )
+#print str2.split(' d ', 0 )
