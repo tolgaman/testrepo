@@ -1,0 +1,5 @@
+for i in `cat a `
+do
+echo adfdafffffdsaf$i > /tmp/tmp/file$i
+done
+
