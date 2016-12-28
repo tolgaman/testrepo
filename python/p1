@@ -166,3 +166,5 @@ print "rstrip: " +  str1.rstrip()
 str2 = "Line1-abcdef \nLine2-abc \nLine4-abcd";
 print str2.split('Lin',3 )
 #print str2.split(' d ', 0 )
+print str1.upper() + str2.upper()
+
