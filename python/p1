@@ -238,4 +238,9 @@ content = dir(math)
 content1 = dir(os)
 print content, content1
 #################################
-
+#globa =  globals()
+#print globals      DOESNT WORK
+#############################
+import di
+contentz = dir(di)
+print "contentz: " , contentz

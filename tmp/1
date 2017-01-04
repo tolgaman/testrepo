@@ -1,0 +1,33 @@
+#!/usr/bin/python
+import math
+import sys
+import os
+
+def prgfls1(file2delete):
+ fil = file2delete
+ with open(fil) as f:
+     for line in f:
+         if os.path.exists(line.rstrip('\n')):
+          os.remove(line.rstrip('\n'))
+          if True:
+           print line.rstrip('\n') + " deleted!"
+          else:
+           print line.rstrip('\n') + " can not be deleted due to permission issue!" 
+         else:
+          print line.rstrip('\n') + " doesn't exist!"
+#file2delete = sys.argv[1]
+#prgfls1(file2delete)
+
+##/home/harun/Desktop/testrepo/tmp
+filelist1 = []
+for root, dirs, files in os.walk("/home/harun/Desktop/testrepo/tmp/tmp"):
+    for file in files:
+        if file.endswith("st1"):
+             print(os.path.join(root, file))
+             filelist1.append(os.path.join(root, file))
+
+print filelist1
+for i in fielist1:
+ print i
+
+ 
