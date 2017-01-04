@@ -1,3 +1,6 @@
+/tmp/john
+/tmp/scott
+/tmp/tolga
 /home/harun/Desktop/testrepo/tmp/tmp/file100000000
 /home/harun/Desktop/testrepo/tmp/tmp/file1
 /home/harun/Desktop/testrepo/tmp/tmp/file10
