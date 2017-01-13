@@ -269,3 +269,10 @@ except IOError:
 else:
    print "Written content in the file successfully"
    fh.close()
+
+
+class ClassName:
+   'Optional class documentation string'
+#   class_suite
+
+print ClassName.__doc__
