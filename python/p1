@@ -6,6 +6,7 @@ import sys
 import random
 import math 
 import os
+import re
 
 print "test 123"
 a, b, c, d, e  = "12", 2, 5, "abcdefghijk", "EREEEEEEEE"
@@ -353,3 +354,17 @@ c.childMethod()      # child calls its method
 c.parentMethod()     # calls parent's method
 c.setAttr(200)       # again call parent's method
 c.getAttr()          # again call parent's method
+
+
+# import re
+
+line = "Cats are smarter than dogs"
+
+matchObj = re.match( r'(.*) are (.*?) .*', line, re.M|re.I)
+
+if matchObj:
+   print "matchObj.group() : ", matchObj.group()
+   print "matchObj.group(1) : ", matchObj.group(1)
+   print "matchObj.group(2) : ", matchObj.group(2)
+else:
+   print "No match!!"
