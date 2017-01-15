@@ -403,3 +403,26 @@ for letter in 'Python':
 
 print "Good bye!"
 
+
+for letter in 'Python':     # First Example
+   if letter == 'h':
+      continue
+   print 'Current Letter :', letter
+
+var = 10                    # Second Example
+while var > 0:              
+   print 'Current variable value :', var
+   var = var -1
+   if var == 5:
+      continue
+
+print "Good bye!"
+
+def printme( str ):
+   "This prints a passed string into this function"
+   print str;
+   #return;
+
+# Now you can call printme function
+printme("I'm first call to user defined function!");
+printme("Again second call to the same function");
