@@ -393,3 +393,12 @@ print "Phone Num : ", num
 # Remove anything other than digits
 num = re.sub(r'\D', "", phone)    
 print "Phone Num : ", num
+
+
+for letter in 'Python': 
+   if letter == 'h':
+      pass
+      print 'This is pass block'
+   print 'Current Letter :', letter
+
+print "Good bye!"
