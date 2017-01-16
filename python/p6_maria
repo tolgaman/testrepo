@@ -1,0 +1,25 @@
+#!/usr//bin/python
+
+import mysql.connector as mariadb
+
+mariadb_connection = mariadb.connect(user='harun', password='adana', database='mysql') 
+cursor = mariadb_connection.cursor()
+
+
+
+
+
+cursor.execute("select user from user;")
+
+for name in cursor:
+ print("name: ", name )
+
+
+
+
+
+
+mariadb_connection.close()
+
+
+

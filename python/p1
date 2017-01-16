@@ -426,3 +426,8 @@ def printme( str ):
 # Now you can call printme function
 printme("I'm first call to user defined function!");
 printme("Again second call to the same function");
+
+file2 = open("python/p1", "r")
+#file2ch = "dsdssdssddssdprint print print"
+file2ch=file2.read(10000)
+print file2ch.replace("print", "PRINNNNNNNNNNNNNNNNNNNNT")
