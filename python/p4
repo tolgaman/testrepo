@@ -7,8 +7,9 @@ server.starttls()
 server.login("tolga.ozaltin", "lnzxklcvgonolxoy")
 
 subject = "SUBJECT goes here. oh yeah" 
-msg = "YOUR MESSAGE!"
-server.sendmail("tolga.ozaltin@gmail.com", "dian.nostikasari@gmail.com", " ", msg)
+msg = "YOUR MESSAGE! "
+#server.sendmail("tolga.ozaltin@gmail.com", "dian.nostikasari@gmail.com",  msg)
+server.sendmail("tolga.ozaltin@gmail.com", "tolga.ozaltin@gmail.com",  msg)
 server.quit()
 
 
