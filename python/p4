@@ -7,9 +7,20 @@ server.starttls()
 server.login("tolga.ozaltin", "lnzxklcvgonolxoy")
 
 subject = "SUBJECT goes here. oh yeah" 
-msg = "YOUR MESSAGE! "
+
+
+TO="dian.nostikasari@gmail.com"
+FROM="tolga.ozaltin@gmail.com"
+BODY="This is the body of the email so oh yeah"
+MESSAGE = "YOUR MESSAGE! "
+SUBJECT = "Subject means konu"
+msg = """Subject: %s
+From: %s 
+To: %s
+%s
+""" % (SUBJECT,FROM, TO, BODY)
 #server.sendmail("tolga.ozaltin@gmail.com", "dian.nostikasari@gmail.com",  msg)
-server.sendmail("tolga.ozaltin@gmail.com", "tolga.ozaltin@gmail.com",  msg)
+server.sendmail(FROM, TO , msg)
 server.quit()
 
 
