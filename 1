@@ -1,0 +1,23 @@
+#!/bin/python
+
+import smtplib
+ 
+server = smtplib.SMTP('smtp.gmail.com', 587)
+server.starttls()
+server.login("tolga.ozaltin", "lnzxklcvgonolxoy")
+
+subject = "SUBJECT goes here. oh yeah" 
+msg = "YOUR MESSAGE!"
+server.sendmail("tolga.ozaltin@gmail.com", "dian.nostikasari@gmail.com", " ", msg)
+server.quit()
+
+
+
+
+
+
+
+
+
+
+
