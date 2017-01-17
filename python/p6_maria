@@ -17,8 +17,6 @@ for name in cursor:
 
 
 
-
-
 mariadb_connection.close()
 
 

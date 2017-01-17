@@ -8,3 +8,5 @@ git config credential.helper store
 git push  https://github.com/tolgaman/testrepo.git
 
 git config credential.helper store
+
+###https://mariadb.com/resources/blog/how-connect-python-programs-mariadb
