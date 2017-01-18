@@ -1,0 +1,27 @@
+from java:8
+
+#Set proxy
+#ENV http_proxy http://162.217.161.13:3128/
+RUN apt-get update
+RUN apt-get install libgomp1
+
+# Install MATLAB Runtime
+ADD MyAppInstaller_mcr.install /home/work/
+WORKDIR /home/work/
+RUN chmod +x ./MyAppInstaller_mcr.install
+RUN ./MyAppInstaller_mcr.install -mode silent -agreeToLicense yes -destinationFolder /usr/local/MATLAB/MATLAB_Runtime
+
+ENV MCR_ROOT /usr/local/MATLAB/MATLAB_Runtime
+ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:$MCR_ROOT/v901/runtime/glnxa64:$MCR_ROOT/v901/bin/glnxa64:$MCR_ROOT/v901/sys/os/glnxa64:$MCR_ROOT/v901/sys/opengl/lib/glnxa64
+
+RUN useradd -ms /bin/bash docker
+WORKDIR /home/docker/
+ADD .aws /home/docker/.aws
+ADD eagle_eye.jar /home/docker/eagle_eye.jar
+RUN chown docker /home/docker/ -R
+WORKDIR /home/docker/
+RUN mkdir -p /logs/local-logs/zero
+RUN chown -R docker /logs/local-logs/zero
+USER docker
+VOLUME /data/docker
+ENTRYPOINT ["java","-jar","eagle_eye.jar"]
