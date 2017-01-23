@@ -9,11 +9,12 @@ server.login("tolga.ozaltin", "lnzxklcvgonolxoy")
 subject = "SUBJECT goes here. oh yeah" 
 
 
-TO="dian.nostikasari@gmail.com"
+TO="tozaltin@etcc.com"
+
 FROM="tolga.ozaltin@gmail.com"
-BODY="This is the body of the email so oh yeah"
-MESSAGE = "YOUR MESSAGE! "
-SUBJECT = "Subject means konu"
+BODY="This is the body of the email so oh yeah GREG"
+MESSAGE = "YOUR MESSAGE! GREG "
+SUBJECT = "Subject means konu GREG"
 msg = """Subject: %s
 From: %s 
 To: %s
