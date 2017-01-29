@@ -9,7 +9,7 @@ server.login("tolga.ozaltin", "lnzxklcvgonolxoy")
 subject = "SUBJECT goes here. oh yeah" 
 
 
-TO="Artugrul.gazi@gmail.com"
+TO="tolga.ozaltin@gmail.com,Artugrul.gazi@gmail.com"
 
 FROM="tolga.ozaltin@gmail.com"
 BODY="This is the body of the email so oh yeah"
@@ -21,13 +21,8 @@ To: %s
 %s
 """ % (SUBJECT,FROM, TO, BODY)
 #server.sendmail("tolga.ozaltin@gmail.com", "dian.nostikasari@gmail.com",  msg)
-server.sendmail(FROM, TO , msg)
+server.sendmail(FROM, TO.split(",") , msg)
 server.quit()
-
-
-
-
-
 
 
 
