@@ -1,0 +1,101 @@
+#!/bin/bash
+
+# Start BRADs server
+/usr/bin/aws ec2 start-instances --instance-ids i-009791c694e4cedd6
+# Start MYSQl/MARIADB
+###/usr/bin/aws ec2 start-instances --instance-ids i-04d0743fb16cdb7e6
+
+# MARIADB 10.1 Dev
+/usr/bin/aws ec2 start-instances  --instance-ids i-0bb0cec3f235bbd0c
+
+# MARIADB 10.1 Test
+### /usr/bin/aws ec2 start-instances  --instance-ids i-08a37b4b604b38a60
+
+#Staring SFTP Dev Server
+### /usr/bin/aws ec2 start-instances --instance-ids i-0f38e9bc5e0c17328
+
+# Windows Terminal Server
+/usr/bin/aws ec2 start-instances  --instance-ids i-012f59d080ed32867
+
+#  App Dev CPU Test1
+### /usr/bin/aws ec2 start-instances  --instance-ids i-03d50447a7378980e
+
+#  App Dev CPU Test2
+### /usr/bin/aws ec2 start-instances  --instance-ids i-0f2a67b440d2fd66b
+
+# Dev Messaging Server
+/usr/bin/aws ec2 start-instances  --instance-ids i-027fb9003af6f3ff0
+
+# Test Messaging Server
+### /usr/bin/aws ec2 start-instances  --instance-ids i-02078c3ad1cb1519b
+
+# Dev GPU Server
+/usr/bin/aws ec2 start-instances  --instance-ids i-0a341f1d23b8b2586
+
+# Test Build Server
+ /usr/bin/aws ec2 start-instances  --instance-ids  i-0c45466bcfff4e4d1
+
+# Test GPU Server
+### /usr/bin/aws ec2 start-instances  --instance-ids i-0f9990084497c0472
+
+# Test SFTP
+###/usr/bin/aws ec2 start-instances  --instance-ids i-0ec522a093339af07
+
+# Application Test - AFE
+###  /usr/bin/aws ec2 start-instances  --instance-ids i-0405d272d8e8c0174
+
+#Starting Cas1
+#ccd /usr/bin/aws ec2 start-instances --instance-ids i-04e866470165852ab
+
+#sleep 20
+
+#Starting Cas3
+#ccc /usr/bin/aws ec2 start-instances --instance-ids i-07d012f2beb7c00a7
+
+#sleep 20
+
+#Starting Cas2
+#ccc /usr/bin/aws ec2 start-instances --instance-ids i-0beae8b49af5babbc
+
+#sleep 20
+
+
+#Starting Cas4
+#ccc /usr/bin/aws ec2 start-instances  --instance-ids i-0108912ab4859c9bb
+
+#sleep 20
+
+#ccc sleep 200
+
+#sleep 20
+
+#ccc /usr/bin/ssh -t -t 172.31.27.123 sudo /home/tolga/cassy
+#ccc sleep 60
+#ccc /usr/bin/ssh -t -t 172.31.16.5 sudo /home/tolga/cassy
+#ccc sleep 60
+#ccc /usr/bin/ssh -t -t 172.31.26.83 sudo /home/tolga/cassy
+#ccc sleep 60
+#ccc /usr/bin/ssh -t -t 172.31.24.57 sudo /home/tolga/cassy
+#ccc sleep 60
+#Starting TEST/DATASTAX
+/usr/bin/aws ec2 start-instances --instance-ids i-0d655c433644f21c0
+sleep 240
+
+#ccc /usr/bin/ssh -t -t 172.31.52.179 sudo /home/tolga/runopscenter
+
+#ccc sleep 60
+#ccc /usr/bin/ssh -t -t 172.31.27.123 sudo /home/tolga/cassy
+#ccc sleep 60
+#ccc /usr/bin/ssh -t -t 172.31.16.5 sudo /home/tolga/cassy
+#ccc sleep 60
+#ccc /usr/bin/ssh -t -t 172.31.26.83 sudo /home/tolga/cassy
+#ccc sleep 60
+#ccc /usr/bin/ssh -t -t 172.31.24.57 sudo /home/tolga/cassy
+#ccc sleep 60
+
+#DOCKER eagle_eye start #we should user this
+## /usr/bin/ssh -t -t 172.31.16.7  /home/tolga/eagle_eyes_start
+
+# CNN Test Backup
+/usr/bin/aws ec2 start-instances  --instance-ids i-0621e4c03d74dccca --region us-west-2
+
