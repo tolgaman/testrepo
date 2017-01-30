@@ -1,0 +1,7 @@
+#!/usr/bin/python
+
+import requests
+fname = 'guppy-0.1.10.tar.gz'
+url = 'https://pypi.python.org/packages/source/g/guppy/' + fname
+r = requests.get(url)
+open(fname , 'wb').write(r.content)
