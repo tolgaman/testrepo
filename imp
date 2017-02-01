@@ -10,3 +10,15 @@ git push  https://github.com/tolgaman/testrepo.git
 git config credential.helper store
 
 ###https://mariadb.com/resources/blog/how-connect-python-programs-mariadb
+
+echo "# Hellow World" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/fdfsdfdfdf/HelloWorld.git
+git push origin master
+
+OR
+
+git remote add origin https://github.com/RaghavAutomation/HelloWorld.git
+git push -u origin master
