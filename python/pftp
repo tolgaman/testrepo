@@ -1,0 +1,17 @@
+#!/bin/python
+
+
+import pysftp
+import sys
+
+path = './THETARGETDIRECTORY/' + sys.argv[1]    #hard-coded
+localpath = sys.argv[1]
+
+host = "pupc6"                    #hard-coded
+password = "adana"                #hard-coded
+username = "pytest"                #hard-coded
+
+with pysftp.Connection(host, username=username, password=password) as sftp:
+    sftp.put(localpath, path)
+
+print 'Upload done.'

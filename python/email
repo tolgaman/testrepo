@@ -9,7 +9,7 @@ server.login("tolga.ozaltin", "lnzxklcvgonolxoy")
 subject = "SUBJECT goes here. oh yeah" 
 
 
-TO="tolga.ozaltin@gmail.com,Artugrul.gazi@gmail.com"
+TO="Artugrul.gazi@gmail.com,zo18376@gmail.com"
 
 FROM="tolga.ozaltin@gmail.com"
 BODY="This is the body of the email so oh yeah"
