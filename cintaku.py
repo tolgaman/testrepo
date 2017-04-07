@@ -1,0 +1,189 @@
+#!/bin/python
+import os
+import re
+import array
+from os import walk
+
+
+def convert(testfile,outputfile3): 
+
+        	
+        A=[]
+	file1 = open(testfile, 'r')
+	#print file1
+	file1_ = file1.read()
+	#print file1_
+	
+	outfile2=outputfile3
+	file2 = open(outfile2, 'w')
+
+	file2.write('version,creator,name,desc,time,distance_in_miles,purpose,local_time,gps_source,age,gender,method_of_travel_work,barriers_to_cycling,frequency,road_confidence,href,text,lat,lon,time2')
+	file2.write("\n")
+	search_version=re.match(r'(.*?)\' version(.*?)\'(.*?)\'', file1_)
+	#print search_version.group()
+	#print search_version.group(1)
+	#print search_version.group(2)
+	version=search_version.group(3)
+	#print version
+	
+	search_creator=re.match(r'(.*?) creator=\'(.*?)\'', file1_)
+	#print search_creator.group()
+	creator=search_creator.group(2)
+	#print creator
+	
+	search_name=re.match(r'(.*?)\<name\>(.*?)\<\/name\>', file1_)
+	#print search_creator.group()
+	name=search_name.group(2)
+	#print name
+	
+	search_desc=re.match(r'(.*?)\<desc\>(.*?)\<\/desc\>', file1_)
+	#print search_desc.group()
+	desc=search_desc.group(2)
+	#print desc
+	
+	search_time=re.match(r'(.*?)\<time\>(.*?)\<\/time\>', file1_)
+	#print search_time.group()
+	time=search_time.group(2)
+	#print time
+	
+	search_distance_in_miles=re.match(r'(.*?)\<distance_in_miles\>(.*?)\<\/distance_in_miles\>', file1_)
+	#print search_distance_in_miles.group()
+	distance_in_miles=search_distance_in_miles.group(2)
+	#print distance_in_miles
+	
+	search_purpose=re.match(r'(.*?)\<purpose\>(.*?)\<\/purpose\>', file1_)
+	#print search_purpose.group()
+	purpose=search_purpose.group(2)
+	#print purpose
+	
+	search_local_time=re.match(r'(.*?)\<local_time\>(.*?)\<\/local_time\>', file1_)
+	#print search_local_time.group()
+	local_time=search_local_time.group(2)
+	#print local_time
+	
+	search_gps_source=re.match(r'(.*?)\<gps_source\>(.*?)\<\/gps_source\>', file1_)
+	#print search_gps_source.group()
+	gps_source=search_gps_source.group(2)
+	#print gps_source
+	
+	search_age=re.match(r'(.*?)\<age\>(.*?)\<\/age\>', file1_)
+	#print search_age.group()
+	age=search_age.group(2)
+	#print age
+	
+	search_gender=re.match(r'(.*?)\<gender\>(.*?)\<\/gender\>', file1_)
+	#print search_gender.group()
+	gender=search_gender.group(2)
+	#print gender
+	
+	
+	search_method_of_travel_work=re.match(r'(.*?)\<method_of_travel_work\>(.*?)\<\/method_of_travel_work\>', file1_)
+	#print search_method_of_travel_work.group()
+	method_of_travel_work=search_method_of_travel_work.group(2)
+	#print method_of_travel_work
+	
+	search_barriers_to_cycling=re.match(r'(.*?)\<barriers_to_cycling\>(.*?)\<\/barriers_to_cycling\>', file1_)
+	#print search_barriers_to_cycling.group()
+	barriers_to_cycling=search_barriers_to_cycling.group(2)
+	#print barriers_to_cycling
+	
+	search_frequency=re.match(r'(.*?)\<frequency\>(.*?)\<\/frequency\>', file1_)
+	#print search_frequency.group()
+	frequency=search_frequency.group(2)
+	#print frequency
+	
+	
+	search_road_confidence=re.match(r'(.*?)\<road_confidence\>(.*?)\<\/road_confidence\>', file1_)
+	#print search_road_confidence.group()
+	road_confidence=search_road_confidence.group(2)
+	#print road_confidence
+	
+	search_href=re.match(r'(.*?)\<link href=\'(.*?)\'\>', file1_)
+	#print search_href.group()
+	href=search_href.group(2)
+	#print href
+	
+	search_text=re.match(r'(.*?)\<text\>(.*?)\<\/text\>', file1_)
+	#print search_text.group()
+	text=search_text.group(2)
+	#print text
+	
+	
+	###search_time2=re.match(r'(.*)\>\<time\>(.*?)\<\/time\>\<\/trkpt\>', file1_)
+	
+	##print search_time2.group(1)
+	##time2=search_time2.group(2)
+	##print time2
+	#for m in re.finditer(r'(.*)\>\<time\>(.*?)\<\/time\>\<\/trkpt\>', file1_):
+	    # print('%02d-%02d: %s' % (m.start(), m.end(), m.group(2)))
+	     #print m.end(1) 
+	##for match in re.finditer(r"\>\<time\>(.*?)\<\/time\>\<\/trkpt\>", file1_, re.S):
+	for match in re.finditer(r"\>\<time\>(.*?)\<\/time\>\<\/trkpt\>", file1_, re.S):
+	#	print match.group(2)
+	        A.append(match.group(1))
+	
+	#print "\n"
+	#print A[0]
+	#print A[1]
+	#print A[2]
+	#print A[0]
+	search_a0=re.match(r'(.*)\>(.*?)$', A[0])
+	a0=search_a0.group(2)
+	A[0]=a0
+	#print A        
+	###    ><time>2016-10-04T07:24:46Z</time></trkpt>
+	#print A[0]
+	#print A[1]
+	#print A[2]
+	#print len(A)
+	
+	B=[]
+	for match in re.finditer(r" lat=\'(.*?)\'", file1_, re.S):
+	     B.append(match.group(1))
+	#print B[0]
+	#print B[1]
+	#print len(B)
+	
+	
+	C=[]
+	for match in re.finditer(r" lon=\'(.*?)\'", file1_, re.S):
+	     C.append(match.group(1))
+	#print C[0]
+	#print C[1]
+	#print len(C)
+	leng=len(C)
+	
+	# version,creator,name,desc,time,distance_in_miles,purpose,local_time,gps_source,age,gender,method_of_travel_work,barriers_to_cycling,frequency,road_confidence,href,text,lat,lon,time2
+	
+	s=","
+	for k in range(0,leng):
+	 latz=B[k]
+	 lonz=C[k]
+	 timez=A[k]
+	 seq = (version,creator,name,desc,time,distance_in_miles,purpose,local_time,gps_source,age,gender,method_of_travel_work,barriers_to_cycling,frequency,road_confidence,href,text,latz,lonz,timez)
+	 file2.write(s.join(seq))
+	 file2.write("\n")
+	#print azz  
+#file2="/test/test1.gpx"
+#outputfile3_="/test/output/test1.csv"
+#convert(file2, outputfile3_)
+#data_directory=raw_input("Enter the data directory cintaku:  ")
+#print data_directory
+#output_directory=raw_input("Enter the output directory cintaku:  ")
+data_directory="c:/ltr"
+output_directory="c:/out"
+
+
+f = []
+for (dirpath, dirnames, filenames) in walk(data_directory):
+    f.extend(filenames)
+    break
+print len(f)
+for cc in range(0,len(f)):
+   #print f[cc]
+   #print cc 
+   #print data_directory+f[cc]
+   fileina=data_directory + "/" + f[cc]
+   fileouta=output_directory+"/"+f[cc]+".csv" 
+   convert(fileina, fileouta)
+
