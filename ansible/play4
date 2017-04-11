@@ -1,0 +1,31 @@
+---
+- hosts: servers
+  vars:
+    http_port: 80
+    max_clients: 200
+  remote_user: root
+  tasks:
+  - name: ensure apache is at the latest version
+#    yum: name=nmap state=latest
+    yum: name=httpd,maven,git,ftp state=latest
+  - name: write the apache config file
+    template: src=/home/ansy/httpd.conf.tmp dest=/etc/httpd/conf/httpd.conf
+    notify:
+    - restart apache
+  - name: ensure apache is running (and enable it at boot)
+    service: name=httpd state=started enabled=yes
+  - name: write another file
+    template: src=/tmp/test dest=/tmp/test2
+  - name: put a funny file
+    template: src=/tmp/funny dest=/tmp/funnyonclient
+  - name: uninstall nmap
+    yum: name=nmap state=absent
+  - group:
+      name=apo state=absent
+  - user:
+      name=apo state=absent
+  - name: Rebooooting
+    command: '/usr/bin/echo rebooting > /tmp/rebooting'
+  handlers:
+    - name: restart apache
+      service: name=httpd state=restarted
